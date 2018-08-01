@@ -10,7 +10,7 @@ popd
 
 echo "##Start compile"
 
-make -j1 -vadlf 
+make -j1
 
 if [ $? -ne 0 ]; then
 	echo "##Compile failed, show detailed messages"
