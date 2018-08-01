@@ -9,4 +9,4 @@ cp ./.config.k3 ./.config
 
 echo "##compile finished"
 
-cp bin/targets/*/*/openwrt* /infrabox/archive/
+cp bin/targets/*/*/openwrt* /infrabox/upload/archive/
