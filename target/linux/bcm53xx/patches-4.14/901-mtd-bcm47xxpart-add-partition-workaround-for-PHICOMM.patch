@@ -1,7 +1,7 @@
-diff --git a/a/drivers/mtd/bcm47xxpart.c b/b/drivers/mtd/bcm47xxpart.c
+diff --git a/drivers/mtd/bcm47xxpart.c b/drivers/mtd/bcm47xxpart.c
 index fc424b1..120c53d 100644
---- a/a/drivers/mtd/bcm47xxpart.c
-+++ b/b/drivers/mtd/bcm47xxpart.c
+--- a/drivers/mtd/bcm47xxpart.c
++++ b/drivers/mtd/bcm47xxpart.c
 @@ -15,6 +15,7 @@
  #include <linux/slab.h>
  #include <linux/mtd/mtd.h>
