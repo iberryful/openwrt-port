@@ -3,7 +3,7 @@
 
 echo "##Preparing Compile"
 
-cp ./.config.k3 ./config
+cp ./.config.k3 ./.config
 
 ./compile.sh
 
