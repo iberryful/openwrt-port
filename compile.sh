@@ -15,7 +15,7 @@ make download
 echo "##set ccache"
 
 export CONFIG_CCACHE=y
-ccache -s
+#ccache -s
 
 echo "##Start compile, try make -j first"
 
@@ -31,5 +31,5 @@ if [ $? -ne 0 ]; then
 	make -j1 V=s 
 fi
 
-echo "##show ccache stats"
-ccache -s
+#echo "##show ccache stats"
+#ccache -s
