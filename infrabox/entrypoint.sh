@@ -7,13 +7,21 @@ for f in `ls /infrabox/cache/`; do
 done
 echo "##Preparing Compile"
 
-cp ./.config.k3 ./.config
+if [ -z $TARGET_PROFILE ];then
+	echo "##Failed, environment TARGET_PROFILE not set"
+	exit 1
+fi
+
+cp ./.config.${TARGET_PROFILE}.minial ./.config
+cat ./.config.common >> ./config
+
+echo "##Compiling for $TARGET_PROFILE"
 
 ./compile.sh
 
 echo "##compile finished"
 
-echo "archive fireware"
+echo "archive firmware"
 cp bin/targets/*/*/openwrt* /infrabox/upload/archive/
 
 echo "cache tools"

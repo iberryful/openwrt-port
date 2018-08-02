@@ -6,6 +6,20 @@
        "docker_file": "infrabox/Dockerfile",
        "build_only": false,
        "resources": { "limits": { "cpu": 3, "memory": 8096 }},
-       "timeout": 36000
-    }]
+       "timeout": 36000,
+       "environment": {
+	   "TARGET_PROFILE": "k3"
+        }
+    },
+    {
+           "type": "docker",
+           "name": "compile_7620",
+            "docker_file": "infrabox/Dockerfile",
+            "build_only": false,
+            "resources": { "limits": { "cpu": 3, "memory": 8096 }},
+            "timeout": 36000,
+	    "environment": {
+	    	"TARGET_PROFILE": "7620"
+	    }
+         }]
 }

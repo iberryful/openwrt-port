@@ -8,7 +8,11 @@ pushd package/add-on/luci-app-shadowsocks/tools/po2lmo
 make && make install
 popd
 
-echo "##Start compile, try make -j"
+echo "Downloading packages"
+
+make download
+
+echo "##Start compile, try make -j first"
 
 make -j 
 
