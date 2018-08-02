@@ -1,10 +1,10 @@
 #!/bin/bash -e 
 
-mkdir -p build_dir
-for f in `ls /infrabox/cache/`; do
-	cp -Rf /infrabox/cache/$f build_dir/
-	echo "Got cache" $f
-done
+#mkdir -p build_dir
+#for f in `ls /infrabox/cache/`; do
+#	cp -Rf /infrabox/cache/$f build_dir/
+#	echo "Got cache" $f
+#done
 echo "##Preparing Compile"
 
 if [ -z $TARGET_PROFILE ];then
@@ -12,8 +12,13 @@ if [ -z $TARGET_PROFILE ];then
 	exit 1
 fi
 
+mkdir -p infrabox/cache/ccache
+export CCACHE_DIR=infrabox/cache/ccache
+ccache -M 2G
+
 cp ./.config.${TARGET_PROFILE}.minial ./.config
 cat ./.config.common >> ./.config
+
 
 echo "##Compiling for $TARGET_PROFILE"
 

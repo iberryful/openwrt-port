@@ -5,7 +5,7 @@ ENV FORCE_UNSAFE_CONFIGURE=1
 RUN apt-get update && \
     apt-get install -y \
     build-essential subversion libncurses5-dev zlib1g-dev gawk gcc-multilib flex git-core gettext libssl-dev \
-    file unzip python wget time && \
+    file unzip python wget time ccache && \
     apt-get clean
 
 COPY . /openwrt

@@ -12,6 +12,11 @@ echo "Downloading packages"
 
 make download
 
+echo "##set ccache"
+
+export CONFIG_CCACHE=y
+ccache -s
+
 echo "##Start compile, try make -j first"
 
 make -j 
@@ -25,3 +30,6 @@ if [ $? -ne 0 ]; then
 	echo "##Compile failed, show detailed messages"
 	make -j1 V=s 
 fi
+
+echo "##show ccache stats"
+ccache -s
