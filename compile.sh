@@ -10,7 +10,7 @@ popd
 
 echo "##Start compile, try make -j"
 
-make -j
+make -j 
 
 if [ $? -ne 0 ]; then
         echo "##Parallel Compile failed, try make -j1"
@@ -19,6 +19,5 @@ fi
 
 if [ $? -ne 0 ]; then
 	echo "##Compile failed, show detailed messages"
-	make -j1 V=s
+	make -j1 V=s 
 fi
-
