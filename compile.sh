@@ -8,9 +8,14 @@ pushd package/add-on/luci-app-shadowsocks/tools/po2lmo
 make && make install
 popd
 
-echo "##Start compile"
+echo "##Start compile, try make -j"
 
-make -j1
+make -j
+
+if [ $? -ne 0 ]; then
+        echo "##Parallel Compile failed, try make -j1"
+        make -j1 
+fi
 
 if [ $? -ne 0 ]; then
 	echo "##Compile failed, show detailed messages"
