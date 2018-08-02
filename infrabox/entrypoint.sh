@@ -13,7 +13,7 @@ if [ -z $TARGET_PROFILE ];then
 fi
 
 cp ./.config.${TARGET_PROFILE}.minial ./.config
-cat ./.config.common >> ./config
+cat ./.config.common >> ./.config
 
 echo "##Compiling for $TARGET_PROFILE"
 
