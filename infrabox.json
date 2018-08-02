@@ -5,7 +5,7 @@
       "name": "compile_k3",
        "docker_file": "infrabox/Dockerfile",
        "build_only": false,
-       "resources": { "limits": { "cpu": 2, "memory": 4096 }},
+       "resources": { "limits": { "cpu": 3, "memory": 8096 }},
        "timeout": 36000
     }]
 }
