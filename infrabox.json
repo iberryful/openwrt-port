@@ -7,6 +7,9 @@
        "build_only": false,
        "resources": { "limits": { "cpu": 3, "memory": 10240 }},
        "timeout": 36000,
+       "security_context": {
+	                   "privileged": true
+			           },
        "environment": {
 	   "TARGET_PROFILE": "k3"
         }
@@ -18,6 +21,9 @@
             "build_only": false,
             "resources": { "limits": { "cpu": 3, "memory": 10240 }},
             "timeout": 36000,
+	    "security_context": {
+		                "privileged": true
+				        },
 	    "environment": {
 	    	"TARGET_PROFILE": "7620"
 	    }
