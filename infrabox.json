@@ -5,7 +5,7 @@
       "name": "compile_k3",
        "docker_file": "infrabox/Dockerfile",
        "build_only": false,
-       "resources": { "limits": { "cpu": 3, "memory": 8096 }},
+       "resources": { "limits": { "cpu": 3, "memory": 10240 }},
        "timeout": 36000,
        "environment": {
 	   "TARGET_PROFILE": "k3"
@@ -16,7 +16,7 @@
            "name": "compile_7620",
             "docker_file": "infrabox/Dockerfile",
             "build_only": false,
-            "resources": { "limits": { "cpu": 3, "memory": 8096 }},
+            "resources": { "limits": { "cpu": 3, "memory": 10240 }},
             "timeout": 36000,
 	    "environment": {
 	    	"TARGET_PROFILE": "7620"

@@ -2,7 +2,7 @@
 
 mkdir -p build_dir
 for f in `ls /infrabox/cache/`; do
-	tar -zxf $f ./ 
+	tar -zxf /infrabox/cache/$f -C ./ 
 	#cp -Rf /infrabox/cache/$f build_dir/
 	echo "Got cache" $f
 done

@@ -8,9 +8,9 @@ pushd package/add-on/luci-app-shadowsocks/tools/po2lmo
 make && make install
 popd
 
-echo "Downloading packages"
+#echo "Downloading packages"
 
-make download
+#make download
 
 echo "##set ccache"
 
