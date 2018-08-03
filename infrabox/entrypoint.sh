@@ -13,14 +13,6 @@ if [ -z $TARGET_PROFILE ];then
 	exit 1
 fi
 
-echo "##Install ccache"
-git clone https://github.com/ccache/ccache.git /tmp/ccache 
-pushd /tmp/ccache 
-git checkout v3.4.2 
-./autogen.sh 
-./configure 
-make && make install && popd && rm -rf /tmp/ccache
-
 
 #mkdir -p infrabox/cache/ccache
 #export CCACHE_DIR=infrabox/cache/ccache
@@ -28,7 +20,6 @@ make && make install && popd && rm -rf /tmp/ccache
 
 cp ./.config.${TARGET_PROFILE}.minial ./.config
 cat ./.config.common >> ./.config
-
 
 echo "##Compiling for $TARGET_PROFILE"
 
