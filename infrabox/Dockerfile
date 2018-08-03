@@ -8,10 +8,6 @@ RUN apt-get update && \
     file unzip python wget time gperf && \
     apt-get clean
 
-RUN git clone https://github.com/ccache/ccache.git /tmp/ccache && \
-    pushd /tmp/ccache && git checkout v3.4.2 && ./autogen.sh && ./configure && \
-    make && make install && popd && rm -rf /tmp/ccache
-
 COPY . /openwrt
 
 COPY infrabox/entrypoint.sh /openwrt/entrypoint.sh
