@@ -19,7 +19,7 @@ export CONFIG_CCACHE=y
 
 echo "##Start compile, try make -j first"
 
-make -j 
+make -j3 
 
 if [ $? -ne 0 ]; then
         echo "##Parallel Compile failed, try make -j1"
