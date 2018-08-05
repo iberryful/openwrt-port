@@ -8,8 +8,8 @@ uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
 uci commit system
 
-#uci set fstab.@global[0].anon_mount=1
-#uci commit fstab
+uci set fstab.@global[0].anon_mount=1
+uci commit fstab
 
 #rm -f /usr/lib/lua/luci/view/admin_status/index/mwan.htm
 #rm -f /usr/lib/lua/luci/view/admin_status/index/upnp.htm
@@ -34,8 +34,8 @@ uci commit system
 
 ln -sf /sbin/ip /usr/bin/ip
 
-rm -rf /tmp/luci-modulecache/
-rm -f /tmp/luci-indexcache
+#rm -rf /tmp/luci-modulecache/
+#rm -f /tmp/luci-indexcache
 
 #sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
