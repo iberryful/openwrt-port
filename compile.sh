@@ -1,8 +1,5 @@
 #!/bin/bash 
 
-git submodule update --recursive
-./scripts/feeds update -a
-./scripts/feeds install -a
 
 pushd package/add-on/luci-app-shadowsocks/tools/po2lmo
 make && make install

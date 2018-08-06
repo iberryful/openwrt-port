@@ -13,6 +13,10 @@ if [ -z $TARGET_PROFILE ];then
 	exit 1
 fi
 
+git submodule update --recursive
+./scripts/feeds update -a
+./scripts/feeds install -a
+
 
 #mkdir -p infrabox/cache/ccache
 #export CCACHE_DIR=infrabox/cache/ccache
