@@ -20,6 +20,7 @@ fi
 
 cp ./.config.${TARGET_PROFILE}.minial ./.config
 cat ./.config.common >> ./.config
+make defconfig
 
 echo "##Compiling for $TARGET_PROFILE"
 
