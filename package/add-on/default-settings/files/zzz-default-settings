@@ -34,8 +34,8 @@ uci commit fstab
 
 ln -sf /sbin/ip /usr/bin/ip
 
-#rm -rf /tmp/luci-modulecache/
-#rm -f /tmp/luci-indexcache
+rm -rf /tmp/luci-modulecache/
+rm -f /tmp/luci-indexcache
 
 #sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
