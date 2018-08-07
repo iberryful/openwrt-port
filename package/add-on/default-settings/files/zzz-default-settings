@@ -40,6 +40,9 @@ rm -f /tmp/luci-indexcache
 #sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
+#add temperature
+sed -i '/%:Uptime%/a\<div class="tr"><div class="td left" width="33%"><%:CPU Temperature%></div><div class="td left"><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%></div></div>' /usr/lib/lua/luci/view/admin_status/index.htm
+
 #sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
 #uci set dhcp.lan.ra='relay'
@@ -55,6 +58,20 @@ sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999
 sed -i '/option disabled/d' /etc/config/wireless
 sed -i '/set wireless.radio${devidx}.disabled/d' /lib/wifi/mac80211.sh
 wifi up
+
+uci set chinadns.@chinadns[0].enable=1
+uci set chinadns.@chinadns[0].bidirectional=1
+uci set chinadns.@chinadns[0].server='114.114.114.114,208.67.220.220#443'
+uci commit
+/etc/init.d/chinadns restart
+
+echo "conf-dir=/etc/dnsmasq.d" >> /etc/dnsmasq.conf
+uci set dhcp.@dnsmasq[0].noresolv=1
+uci set dhcp.@dnsmasq[0].cachesize=10000
+uci add_list dhcp.@dnsmasq[0].server=127.0.0.1#5353
+uci commit
+/etc/init.d/dnsmasq restart
+
 
 #sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 #echo "DISTRIB_REVISION='R7.7.4 By Lean'" >> /etc/openwrt_release
