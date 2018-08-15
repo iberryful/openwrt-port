@@ -1,11 +1,11 @@
 #!/bin/bash -e 
 
-mkdir -p build_dir
-for f in `ls /infrabox/cache/`; do
-	tar -zxf /infrabox/cache/$f -C ./ 
+#mkdir -p build_dir
+#for f in `ls /infrabox/cache/`; do
+	#tar -zxf /infrabox/cache/$f -C ./ 
 	#cp -Rf /infrabox/cache/$f build_dir/
-	echo "Got cache" $f
-done
+	#echo "Got cache" $f
+#done
 echo "##Preparing Compile"
 
 if [ -z $TARGET_PROFILE ];then
@@ -35,7 +35,7 @@ echo "##compile finished"
 echo "archive firmware"
 cp bin/targets/*/*/openwrt* /infrabox/upload/archive/
 
-echo "cache staging_dir"
+#echo "cache staging_dir"
 #cp -Rf build_dir/host /infrabox/cache/
-tar -zcf /infrabox/cache/staging_dir.tar.gz staging_dir
+#tar -zcf /infrabox/cache/staging_dir.tar.gz staging_dir
 

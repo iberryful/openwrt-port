@@ -7,14 +7,14 @@ popd
 
 echo "Downloading packages"
 
-make download
+make download -j3
 
 echo "##Drop file cache"
 echo 3 > /proc/sys/vm/drop_caches
 
-echo "##set ccache"
+#echo "##set ccache"
 
-export CONFIG_CCACHE=y
+#export CONFIG_CCACHE=y
 #ccache -s
 
 echo "##Start compile, try make -j first"
